@@ -8,7 +8,6 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { createHistory as history } from 'history';
 import { reducer as formReducer } from 'redux-form';
 
-
 import CarsIndex from './containers/cars_index';
 import CarsShow from './containers/cars_show';
 import CarsNew from './containers/cars_new';
@@ -23,9 +22,7 @@ const initialState = {
   cars: []
 };
 
-
 const reducers = combineReducers({
-  // key: reducer
   garage: (state = null, action) => state,
   cars: carsReducer,
   form: formReducer
@@ -35,7 +32,7 @@ const middlewares = applyMiddleware(reduxPromise, logger);
 
 // render an instance of the component in the DOM
 ReactDOM.render(
-  <Provider store={createStore(reducers, {}, middlewares)}>
+  <Provider store={createStore(reducers, initialState, middlewares)}>
     <Router history={history}>
       <div className="view-container">
         <Switch>

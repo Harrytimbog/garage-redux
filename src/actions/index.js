@@ -1,4 +1,3 @@
-// TODO: add and export your own actions
 const BASE_URL = 'https://wagon-garage-api.herokuapp.com';
 
 export function fetchCars(garage) {
